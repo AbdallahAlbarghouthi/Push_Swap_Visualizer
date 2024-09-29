@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Push Swap Visualizer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Push Swap Visualizer</h1>
+        <div>
+            <label for="initStack">Enter initial stack values (comma-separated):</label>
+            <input type="text" id="initStack" placeholder="e.g. 2, 1, 3, 6">
+            <button onclick="setInitialStack()">Set Stack</button>
+        </div>
+
+        <div class="grid">
+            <div class="stack-container">
+                <div class="controls">
+                    <button class="move-btn" onclick="topSwap(stackA, 'sa')">[sa] Swap A</button>
+                    <button class="move-btn" onclick="push(stackA, stackB, 'pb')">[pb] Push to B</button>
+                    <button class="move-btn" onclick="rotate(stackA, 'ra')">[ra] Rotate A</button>
+                    <button class="move-btn" onclick="reverseRotate(stackA, 'rra')">[rra] Reverse Rotate A</button>
+                </div>
+                <div class="stack-display">
+                    <div class="stack-title">Stack A</div>
+                    <ul id="stackAList"></ul>
+                </div>
+            </div>
+
+            <div class="stack-container">
+                <div class="controls">
+                    <button class="move-btn" onclick="topSwap(stackB, 'sb')">[sb] Swap B</button>
+                    <button class="move-btn" onclick="push(stackB, stackA, 'pa')">[pa] Push to A</button>
+                    <button class="move-btn" onclick="rotate(stackB, 'rb')">[rb] Rotate B</button>
+                    <button class="move-btn" onclick="reverseRotate(stackB, 'rrb')">[rrb] Reverse Rotate B</button>
+                </div>
+                <div class="stack-display">
+                    <div class="stack-title">Stack B</div>
+                    <ul id="stackBList"></ul>
+                </div>
+            </div>
+        </div>
+
+        <button onclick="reset()" class="reset-btn">Reset</button>
+
+        <div class="moves-display">
+            <div id="recordedMoves"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
